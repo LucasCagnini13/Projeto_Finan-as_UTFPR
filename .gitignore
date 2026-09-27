@@ -1,0 +1,33 @@
+# Dependências
+node_modules/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Builds e caches
+dist/
+build/
+coverage/
+.expo/
+.expo-shared/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Nativos gerados
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
