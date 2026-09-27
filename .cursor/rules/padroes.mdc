@@ -1,0 +1,31 @@
+---
+description: Nomenclatura e arquitetura obrigatórias do projeto
+alwaysApply: true
+---
+
+# Padrões
+
+Detalhe em `cursor/padroes.md`.
+
+## Variáveis
+
+Prefixo de tipo: `n` number, `c` string, `l` boolean, `m` lista, `o` objeto.
+
+```js
+const nUsuarioId = 10;
+const cNome = "Lucas";
+const lAtivo = true;
+const mTransacoes = [];
+const oUsuario = { nId: nUsuarioId, cNome };
+```
+
+## Funções
+
+`[entidade] + [ação]`: `transacaoListar`, `usuarioBuscar`, `saldoCalcular`.
+Não use `listarTransacoes` nem `getUser`.
+
+## Arquitetura
+
+- Frontend: React Native, Atomic Design, Redux. Atom não chama API.
+- Backend: Express, Prisma, MVC, Singleton. Controller não acessa o banco.
+- Nomes de arquivo: `TransacaoLista.jsx`, `transacaoController.js`, `TransacaoServico.js`.

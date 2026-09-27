@@ -2,7 +2,7 @@
 
 Aplicativo mobile de gestão financeira pessoal, desenvolvido na disciplina de **Desenvolvimento Mobile** da UTFPR.
 
-O repositório está organizado em três pastas independentes: aplicativo, API e padrões de código. Toda implementação deve seguir as decisões técnicas registradas neste README e o detalhamento em [`cursor/README.md`](./cursor/README.md).
+O repositório está organizado em três pastas independentes: aplicativo, API e treinamento da IA. Toda implementação deve seguir as decisões deste README, o processo em [`cursor/desenvolvimento-ia.md`](./cursor/desenvolvimento-ia.md) e os padrões em [`cursor/padroes.md`](./cursor/padroes.md).
 
 **Repositório:** [github.com/LucasCagnini13/Projeto_Finan-as_UTFPR](https://github.com/LucasCagnini13/Projeto_Finan-as_UTFPR)
 
@@ -16,6 +16,7 @@ O repositório está organizado em três pastas independentes: aplicativo, API e
 - [Frontend](#frontend)
 - [Backend](#backend)
 - [Padrões de código](#padrões-de-código)
+- [Agentes e desenvolvimento com IA](#agentes-e-desenvolvimento-com-ia)
 - [Como começar](#como-começar)
 - [Fluxo Git](#fluxo-git)
 - [Documentação](#documentação)
@@ -54,18 +55,19 @@ Essas regras valem para frontend e backend, inclusive estados, parâmetros e ser
 Projeto_Financas_UTFPR/
 ├── README.md
 ├── .gitignore
+├── AGENTS.md                 # ponteiro para o treinamento da IA
 ├── frontend/                 # aplicativo React Native
 ├── backend/                  # API Express + Prisma
-└── cursor/        # convenções obrigatórias
+└── cursor/                   # processo com IA + padrões de código
 ```
 
 | Pasta | Responsabilidade |
 | --- | --- |
 | `frontend/` | Telas, componentes atômicos, Redux e consumo da API |
 | `backend/` | Rotas, controllers, models, views JSON, Prisma e singletons |
-| `cursor/` | Nomenclatura, arquitetura e exemplos corretos/incorretos |
+| `cursor/` | Treinamento dos agentes: processo com IA e convenções de código |
 
-Não misture código de aplicativo com código de API. Padrões ficam documentados em `cursor/`, não espalhados em comentários soltos.
+Não misture código de aplicativo com código de API. Processo e padrões ficam em `cursor/`. Os agentes leem essa pasta antes de gerar código.
 
 ---
 
@@ -169,7 +171,21 @@ saldoCalcular();
 
 Evite `buscarUsuario()` ou `listarTransacoes()`. O substantivo vem primeiro.
 
-O guia completo, com estados Redux, controllers, Prisma e exemplos do domínio financeiro, está em [`cursor/README.md`](./cursor/README.md).
+O guia completo, com estados Redux, controllers, Prisma e exemplos do domínio financeiro, está em [`cursor/padroes.md`](./cursor/padroes.md).
+
+---
+
+## Agentes e desenvolvimento com IA
+
+A pasta `cursor/` dirige os agentes. A IA é ferramenta de engenharia: ela implementa um recorte a partir de especificação, não inventa o produto.
+
+```text
+problema → aceite testável → um recorte → código + evidência
+```
+
+Leia primeiro [`cursor/README.md`](./cursor/README.md). O contrato dos agentes está em [`cursor/AGENTS.md`](./cursor/AGENTS.md). O processo (DoR, pedido que funciona, ADR e DoD) está em [`cursor/desenvolvimento-ia.md`](./cursor/desenvolvimento-ia.md).
+
+Não comece pelo código. Não peça o aplicativo inteiro. Não desenhe tela sem requisito.
 
 ---
 
@@ -214,9 +230,14 @@ Se o remoto já existir, use só `git push -u origin main`.
 | Arquivo | Conteúdo |
 | --- | --- |
 | [README.md](./README.md) | Visão geral do projeto e decisões |
+| [AGENTS.md](./AGENTS.md) | Ponteiro da raiz que o Cursor carrega sozinho |
+| [frontend/AGENTS.md](./frontend/AGENTS.md) | Ponteiro do app para `cursor/` |
+| [backend/AGENTS.md](./backend/AGENTS.md) | Ponteiro da API para `cursor/` |
 | [frontend/README.md](./frontend/README.md) | Atomic Design, Redux e pastas do app |
 | [backend/README.md](./backend/README.md) | MVC, Singleton, Express e Prisma |
-| [cursor/README.md](./cursor/README.md) | Nomenclatura e exemplos obrigatórios |
+| [cursor/README.md](./cursor/README.md) | Índice do treinamento da IA |
+| [cursor/desenvolvimento-ia.md](./cursor/desenvolvimento-ia.md) | Processo: spec, aceite, ADR, um recorte |
+| [cursor/padroes.md](./cursor/padroes.md) | Nomenclatura e exemplos obrigatórios |
 
 ---
 

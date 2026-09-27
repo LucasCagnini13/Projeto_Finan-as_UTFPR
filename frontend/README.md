@@ -2,7 +2,7 @@
 
 Aplicativo mobile em **React Native**, organizado por **Atomic Design**, com **Redux** para o estado da interface.
 
-Antes de criar tela, componente ou action, leia [`../cursor/README.md`](../cursor/README.md).
+Antes de criar tela, componente ou action, leia [`../cursor/AGENTS.md`](../cursor/AGENTS.md), [`../cursor/desenvolvimento-ia.md`](../cursor/desenvolvimento-ia.md) e [`../cursor/padroes.md`](../cursor/padroes.md).
 
 ---
 

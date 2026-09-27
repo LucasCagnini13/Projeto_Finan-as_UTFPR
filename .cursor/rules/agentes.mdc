@@ -1,0 +1,30 @@
+---
+description: Processo de desenvolvimento com IA — especificação antes do código
+alwaysApply: true
+---
+
+# Engenharia com IA
+
+A pasta `cursor/` treina os agentes. Leia `cursor/AGENTS.md` e `cursor/desenvolvimento-ia.md` antes de gerar código.
+
+Se a tarefa for no aplicativo, leia também `frontend/AGENTS.md` e `frontend/README.md`.
+Se a tarefa for na API, leia também `backend/AGENTS.md` e `backend/README.md`.
+Não duplique processo dentro de `frontend/` ou `backend/`.
+
+## Antes de implementar
+
+1. Problema e público, sem vender tecnologia.
+2. Escopo e não-escopo deste recorte.
+3. Aceite testável (dado / quando / então).
+4. Pasta certa: `frontend/`, `backend/` ou `cursor/`.
+5. Restrições da stack já decidida.
+
+## Regras
+
+- Um recorte por vez. Não peça o app inteiro.
+- Não aceite a primeira resposta sem ler e testar.
+- Não cole senha, token ou `.env` no chat.
+- Não pergunte “qual é o melhor?”. Compare 2–3 alternativas neste projeto; o humano decide.
+- Decisão cara vira ADR. “A IA sugeriu” não é ADR.
+- Cubra vazio, loading, erro e conteúdo extremo.
+- O “pronto” é o aceite, não o caso feliz.

@@ -2,7 +2,7 @@
 
 API REST em **Node.js** e **Express**, com **Prisma** para o banco, organizada em **MVC**. Serviços compartilhados e o client do Prisma são **Singleton**.
 
-Antes de criar rota, model ou service, leia [`../cursor/README.md`](../cursor/README.md).
+Antes de criar rota, model ou service, leia [`../cursor/AGENTS.md`](../cursor/AGENTS.md), [`../cursor/desenvolvimento-ia.md`](../cursor/desenvolvimento-ia.md) e [`../cursor/padroes.md`](../cursor/padroes.md).
 
 ---
 
