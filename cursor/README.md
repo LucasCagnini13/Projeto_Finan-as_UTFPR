@@ -25,6 +25,8 @@ Não gere código sem passar por essa leitura quando a tarefa for implementaçã
 | `AGENTS.md` | Contrato dos agentes: ordem de trabalho, limites e anti-padrões |
 | `desenvolvimento-ia.md` | Processo de desenvolvimento com IA (spec, aceite, ADR, um recorte) |
 | `padroes.md` | Hungarian Notation, `entidade + ação` e arquitetura |
+| `adr/` | Decisões caras de desfazer. Cache no TanStack Query e navegação em pilha, abas e guarda |
+| `recortes/` | Um planejamento por tela: login e cadastro, início, finanças, investimentos e perfil |
 
 O Cursor carrega sozinho:
 
