@@ -6,17 +6,47 @@ Antes de criar tela, componente ou action, leia [`../cursor/AGENTS.md`](../curso
 
 ---
 
+## Como rodar
+
+Na pasta `frontend/`:
+
+```bash
+npm install
+npx expo start
+```
+
+O Expo abre o aplicativo no navegador, no emulador ou no Expo Go. Não há API neste momento.
+
+Conta de demonstração, só no mock em memória:
+
+- e-mail: `professor@email.com`
+- senha: `123456`
+- nome na saudação: Professor Convidado
+
+O login já abre com esses campos preenchidos.
+
+O que está implementado:
+
+- Recorte 01, em [`../cursor/recortes/01-login-cadastro.md`](../cursor/recortes/01-login-cadastro.md): login, cadastro, recuperação simulada de senha e a guarda que esconde as abas até existir sessão.
+- Recorte 02, em [`../cursor/recortes/02-inicio.md`](../cursor/recortes/02-inicio.md): início com saldo, entradas, saídas, próximos pagamentos e gráfico.
+- Recorte 03, em [`../cursor/recortes/03-financas.md`](../cursor/recortes/03-financas.md): histórico, filtro, lançamento, comprovante, categorias e rendas. O saldo do início muda quando um lançamento é salvo, editado ou excluído.
+- Recorte 04, em [`../cursor/recortes/04-investimentos.md`](../cursor/recortes/04-investimentos.md): autorização simulada do Banco Central e da B3, carteira de exemplo e detalhe do ativo. Não é a posição real e não há recomendação.
+- Recorte 05, em [`../cursor/recortes/05-perfil.md`](../cursor/recortes/05-perfil.md): perfil com nome, e-mail e CPF mascarado, edição e saída. Sair limpa a sessão e o cache e volta ao login.
+
+---
+
 ## Decisões
 
 | Tema | Escolha |
 | --- | --- |
 | Framework | React Native |
 | Arquitetura de UI | Atomic Design |
-| Estado de interface | Redux |
+| Estado de interface | Redux para sessão, filtros e modais |
+| Dados financeiros | TanStack Query, com mock enquanto não há API |
 | Comunicação com API | services HTTP |
 | Nomenclatura | Hungarian + `entidadeAcao` |
 
-O Redux guarda o que a interface precisa lembrar: loading, erro, item selecionado, filtros e listas já carregadas. Regra de negócio pesada (cálculo oficial de saldo, validação de permissão) permanece no backend.
+O Redux guarda a sessão e o que é só da interface, como filtros e modais. Saldo, pagamentos e as outras listas financeiras ficam no TanStack Query. A tela mostra o que o serviço devolve; o cálculo oficial do saldo permanece no backend.
 
 ---
 
@@ -30,9 +60,11 @@ frontend/
     │   ├── molecules/      # combinação pequena de átomos
     │   ├── organisms/      # bloco completo de uma feature
     │   └── templates/      # esqueleto da tela (header, conteúdo, rodapé)
+    ├── navigation/         # guarda, pilha de autenticação e abas
     ├── screens/            # páginas que o usuário navega
     ├── store/              # store, slices e selectors do Redux
-    └── services/           # chamadas para o backend
+    ├── services/           # chamadas para o backend, ou mock neste recorte
+    └── theme/              # cores da interface
 ```
 
 ### O que entra em cada camada

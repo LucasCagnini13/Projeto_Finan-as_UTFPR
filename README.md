@@ -191,19 +191,24 @@ Não comece pelo código. Não peça o aplicativo inteiro. Não desenhe tela sem
 
 ## Como começar
 
-O repositório ainda é a base de organização e documentação. Quando o código for criado:
+A API ainda não tem código. O aplicativo já sobe com o recorte de login e cadastro.
 
 ```bash
-# API
-cd backend
-npm install
-npx prisma migrate dev
-npm run dev
-
 # Aplicativo
 cd frontend
 npm install
 npx expo start
+```
+
+A conta de demonstração e o que cada tela faz estão em [`frontend/README.md`](./frontend/README.md).
+
+Quando a API for criada:
+
+```bash
+cd backend
+npm install
+npx prisma migrate dev
+npm run dev
 ```
 
 Variáveis de ambiente ficam em `.env` (não versionado). Use `.env.example` só com nomes, nunca com senha ou token.
