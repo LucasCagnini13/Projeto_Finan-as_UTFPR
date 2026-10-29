@@ -8,6 +8,8 @@ Antes de criar tela, componente ou action, leia [`../cursor/AGENTS.md`](../curso
 
 ## Como rodar
 
+Precisa de Node.js no computador e do app **Expo Go** no celular. Não há API neste momento: os dados ficam em memória.
+
 Na pasta `frontend/`:
 
 ```bash
@@ -15,15 +17,38 @@ npm install
 npx expo start
 ```
 
-O Expo abre o aplicativo no navegador, no emulador ou no Expo Go. Não há API neste momento.
+### Pela rede (Wi-Fi)
 
-Conta de demonstração, só no mock em memória:
+Computador e celular na mesma rede. Escaneie o QR code do terminal com o Expo Go.
+
+### Pelo cabo USB (Android)
+
+1. Ative a depuração USB no celular e conecte o cabo.
+2. No terminal, dentro de `frontend/`:
+
+```bash
+npx expo start --localhost
+```
+
+3. Em outro terminal:
+
+```bash
+adb reverse tcp:8081 tcp:8081
+```
+
+4. Abra o projeto no Expo Go. O celular fala com o computador pelo cabo, sem depender do Wi-Fi.
+
+O `adb` vem com o Android SDK Platform-Tools.
+
+O Expo também abre o aplicativo no navegador (`w` no terminal) ou no emulador.
+
+### Login padrão
+
+A conta existe só no mock em memória. A tela de login já abre com os campos preenchidos.
 
 - e-mail: `professor@email.com`
 - senha: `123456`
 - nome na saudação: Professor Convidado
-
-O login já abre com esses campos preenchidos.
 
 O que está implementado:
 

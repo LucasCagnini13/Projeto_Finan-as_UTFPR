@@ -191,16 +191,32 @@ Não comece pelo código. Não peça o aplicativo inteiro. Não desenhe tela sem
 
 ## Como começar
 
-A API ainda não tem código. O aplicativo já sobe com o recorte de login e cadastro.
+A API ainda não tem código. O aplicativo sobe com os dados em memória. Precisa de Node.js no computador e do app **Expo Go** no celular.
 
 ```bash
-# Aplicativo
 cd frontend
 npm install
 npx expo start
 ```
 
-A conta de demonstração e o que cada tela faz estão em [`frontend/README.md`](./frontend/README.md).
+**Pela rede:** computador e celular na mesma rede Wi-Fi. Escaneie o QR code do terminal com o Expo Go.
+
+**Pelo cabo USB (Android):** ative a depuração USB, conecte o cabo e rode:
+
+```bash
+npx expo start --localhost
+adb reverse tcp:8081 tcp:8081
+```
+
+Depois abra o projeto no Expo Go. O `adb` vem com o Android SDK Platform-Tools.
+
+**Login padrão** (a tela já abre preenchida):
+
+- e-mail: `professor@email.com`
+- senha: `123456`
+- nome na saudação: Professor Convidado
+
+O que cada tela faz está em [`frontend/README.md`](./frontend/README.md).
 
 Quando a API for criada:
 
